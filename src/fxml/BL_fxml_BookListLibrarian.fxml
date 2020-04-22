@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BL_FXML_BookListLibrarian_Controller">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="myProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem fx:id="createNewProfileMenuItem" mnemonicParsing="false" onAction="#createNewProfileMenuItemClicked" text="Create New Profile" />
+                        <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" onAction="#viewProfileMenuItemClicked" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchMenuItemClicked" text="Search" />
+                  <MenuItem fx:id="returnABookMenuItem" mnemonicParsing="false" onAction="#returnABookMenuItemCLicked" text="Return A Book" />
+                  <MenuItem fx:id="stockManagmentMenuItem" mnemonicParsing="false" onAction="#stockManagmentMenuItemClicked" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox spacing="20.0">
+         <children>
+            <TableView fx:id="ownedTableView" editable="true" fixedCellSize="-2.0" prefHeight="500.0" prefWidth="1000.0">
+              <columns>
+                <TableColumn fx:id="bookNameTableColumn" prefWidth="75.0" text="Book Name" />
+                  <TableColumn fx:id="bookNameTableColumn1" prefWidth="75.0" text="Serial Number" />
+                <TableColumn fx:id="rentedAtTableColumn" prefWidth="75.0" text="Rented At" />
+                  <TableColumn fx:id="dueDateTableColumn" prefWidth="75.0" text="Due Date" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <HBox.margin>
+                  <Insets left="13.0" />
+               </HBox.margin>
+            </TableView>
+            <TableView fx:id="orderedTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="orderedListTableColumn" editable="false" prefWidth="75.0" text="Ordered Books" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="15.0">
+         <children>
+            <Label fx:id="totalBooksLabel" text="Total Books:  17" />
+            <Button fx:id="timeExtensionButton" mnemonicParsing="false" onAction="#timeExtensionButtonClicked" text="Extend Time">
+               <HBox.margin>
+                  <Insets left="817.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="cancelBookOrderButton" mnemonicParsing="false" onAction="#cancelBookOrderButtonClicked" text="Cancel Book Order">
+               <HBox.margin>
+                  <Insets left="89.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

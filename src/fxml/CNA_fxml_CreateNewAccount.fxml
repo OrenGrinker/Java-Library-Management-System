@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CNA_FXML_CreateNewAccount_Controller">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="myProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem fx:id="createNewProfileMenuItem" mnemonicParsing="false" onAction="#createNewProfileMenuItemClicked" text="Create New Profile" />
+                        <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" onAction="#viewProfileMenuItemClicked" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="signOutMenuItem" mnemonicParsing="false" onAction="#signOutMenuItemClicked" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="searchMenuButton" mnemonicParsing="false" onAction="#searchMenuButtonClicked" text="Search" />
+                  <MenuItem fx:id="returnMenuButton" mnemonicParsing="false" onAction="#returnMenuButtonClicked" text="Return A Book" />
+                  <MenuItem fx:id="stockManagmentMenuButton" mnemonicParsing="false" onAction="#stockManagmentMenuButtonClicked" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <VBox spacing="15.0">
+         <children>
+            <Label fx:id="createAccountLabel" text="Create account">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="firstNameLabel" text="   First name">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <TextField fx:id="firstNameTextField" maxWidth="200.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="lastNameLabel" text="   Last name">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <TextField fx:id="lastNameTextField" maxWidth="200.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="emailLabel" text="   Email">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <TextField fx:id="emailTextField" maxWidth="200.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="phoneNumberLabel" text="Phone number">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="phoneNumberTextField" maxWidth="200.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="birthdayLabel" text="   Birthday">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <DatePicker fx:id="birthdayDatePicker" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="facultyMenuButton" text="   Faculty">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <MenuButton fx:id="chooseMenuButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Choose">
+                           <items>
+                              <MenuItem fx:id="softwareMenuItem" mnemonicParsing="false" onAction="#softwareMenuItemClicked" text="Software" />
+                              <MenuItem fx:id="InforamationSystemsMenuItem" mnemonicParsing="false" onAction="#InforamationSystemsMenuItemClicked" text="Inforamation Systems" />
+                              <MenuItem fx:id="industryNManagmenMenuItem" mnemonicParsing="false" onAction="#industryNmanagmentMenuItemClicked" text="Industry &amp; managment" />
+                              <MenuItem fx:id="eclectricityNEkctronicsMenuItem" mnemonicParsing="false" onAction="#eclectricityNEkctronicsMenuItemClicked" text="Electronics" />
+                              <MenuItem fx:id="AppliedMathematicsMenuItem" mnemonicParsing="false" onAction="#AppliedMathematicsMenuItemClicked" text="Applied Mathematics" />
+                              <MenuItem fx:id="BiotechnologyMenuItem" mnemonicParsing="false" onAction="#BiotechnologyMenuItemClicked" text="Biotechnology" />
+                              <MenuItem fx:id="OpticsMenuItem" mnemonicParsing="false" onAction="#OpticsMenuItemClicked" text="Optics" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label fx:id="getUpdatesToLabel" text="Get updates to">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="(Must choose at least 1)" textFill="RED">
+                           <font>
+                              <Font name="Calibri" size="10.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="40.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <children>
+                              <CheckBox fx:id="emailCheckBox" mnemonicParsing="false" onAction="#emailCheckBoxClicked" selected="true" text="Email">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="phoneCheckBox" mnemonicParsing="false" onAction="#phoneCheckBoxClicked" selected="true" text="Phone">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="genderLabel" text="Gender">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="40.0">
+                           <children>
+                              <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" onAction="#maleRadioButtonClicked" selected="true" text="Male">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="femaleRadioButton" mnemonicParsing="false" onAction="#femaleRadioButtonClicked" text="Female">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="IDNumberLabel" text="   ID number (Used to login)">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane alignment="CENTER_LEFT" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="IDNumberTextField" maxWidth="200.0" prefWidth="200.0">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <ImageView fx:id="IDIconImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../z_images/UserImage.png" />
+                                 </image>
+                                 <StackPane.margin>
+                                    <Insets left="180.0" />
+                                 </StackPane.margin>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="passwordLabel" text="   Password (Used to login)">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="RED">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane alignment="CENTER_LEFT" prefWidth="200.0">
+                           <children>
+                              <PasswordField fx:id="passwordTextField" maxWidth="200.0" prefWidth="200.0">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <ImageView fx:id="passwordIconImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                                 <image>
+                                    <Image url="@../z_images/LockImage.png" />
+                                 </image>
+                                 <StackPane.margin>
+                                    <Insets left="180.0" />
+                                 </StackPane.margin>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Hyperlink fx:id="privacyNoticeHyperlink" contentDisplay="CENTER" onAction="#privacyNoticeHyperlinkClicked" prefHeight="43.0" prefWidth="200.0" text="By creating an account you agree to OBL's Privacy Notice" wrapText="true" />
+                  <Button fx:id="createAccountNowButton" mnemonicParsing="false" onAction="#createAccountNowButtonClicked" prefHeight="35.0" prefWidth="200.0" text="Create your OBL account now!">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

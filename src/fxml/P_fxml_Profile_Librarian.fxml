@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.P_FXML_Profile_Librarian_Controller">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="myProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem fx:id="createNewMenuItem" mnemonicParsing="false" onAction="#createNewMenuItemClicked" text="Create New Profile" />
+                        <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" onAction="#viewProfileMenuItemClicked" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="signOutMenuItem" mnemonicParsing="false" onAction="#signOutMenuItemClicked" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="SearchABookMenuItem" mnemonicParsing="false" onAction="#SearchABookMenuItemClicked" text="Search" />
+                  <MenuItem fx:id="returnABookMenuItem" mnemonicParsing="false" onAction="#returnABookMenuItemClicked" text="Return A Book" />
+                  <MenuItem fx:id="stockManagmentMenuItem" mnemonicParsing="false" onAction="#stockManagmentMenuItemClicked" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="AboutMenuItem" mnemonicParsing="false" onAction="#AboutMenuItemClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+         <VBox.margin>
+            <Insets left="-15.0" />
+         </VBox.margin>
+      </MenuBar>
+      <HBox spacing="10.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Profile information">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox layoutX="10.0" layoutY="60.0">
+                     <children>
+                        <Text fx:id="FullnameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name:  ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="FullNameLabel" prefHeight="18.0" prefWidth="96.0" text="irit shlomo" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fx:id="IdText" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="25.45037841796875">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="IdLabel" prefHeight="18.0" prefWidth="96.0" text="312592199" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="335.0">
+                     <children>
+                        <Text fx:id="birthDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth date:  ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="birthDateLabel" prefHeight="18.0" prefWidth="96.0" text="12/2/1990" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="337.0">
+                     <children>
+                        <Text fx:id="emailText" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:  ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="emailLabel" prefHeight="18.0" prefWidth="96.0" text="irit@gmail.com" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="60.0">
+                     <children>
+                        <Text fx:id="departmentText" strokeType="OUTSIDE" strokeWidth="0.0" text="Department:   ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="departmentLabel" prefHeight="18.0" prefWidth="96.0" text="library" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="564.0">
+                     <children>
+                        <Text fx:id="rollText" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll:   ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="rollLabel" prefHeight="18.0" prefWidth="96.0" text="manager" />
+                     </children>
+                  </HBox>
+                  <Text fx:id="newPasswordText" layoutX="10.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="newPasswordTextField" />
+                  <Text fx:id="verifyPasswordText" layoutX="10.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify password:" wrappingWidth="101.34027099609375">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="verifyPassordTextField" layoutX="10.0" layoutY="492.0" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../z_images/EditUserFemale.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <HBox spacing="40.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </HBox>
+                  <Button fx:id="SaveChangesButton" mnemonicParsing="false" onAction="#SaveChangesButtonClicked" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: #C6F6DE; -fx-border-color: #143A27;" text="Save changes">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" />
+   </padding>
+</VBox>

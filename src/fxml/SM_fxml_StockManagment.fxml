@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SM_FXML_StockManagment_Controller">
+   <children>
+      <MenuBar fx:id="menuBar1" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="myProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem fx:id="createNewMenuItem" mnemonicParsing="false" onAction="#createNewMenuItemClicked" text="Create New Profile" />
+                        <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" onAction="#viewProfileMenuItemClicked" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="signOutMenuItem" mnemonicParsing="false" onAction="#signOutMenuItemClicked" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="SearchABookMenuItem" mnemonicParsing="false" onAction="#SearchABookMenuItemClicked" text="Search" />
+                  <MenuItem fx:id="returnABookMenuItem" mnemonicParsing="false" onAction="#returnABookMenuItemClicked" text="Return A Book" />
+                  <MenuItem fx:id="stockManagmentMenuItem" mnemonicParsing="false" onAction="#stockManagmentMenuItemClicked" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="AboutMenuItem" mnemonicParsing="false" onAction="#AboutMenuItemClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+         <VBox.margin>
+            <Insets left="-15.0" />
+         </VBox.margin>
+      </MenuBar>
+      <Text disable="true" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock managment" textAlignment="CENTER" wrappingWidth="293.7405471801758">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <HBox spacing="10.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter by book name:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="bookNameTextField" alignment="CENTER" onAction="#bookNameTextFieldEnterClicked" prefHeight="27.0" prefWidth="130.0" promptText="Enter book name" style="-fx-border-color: #143A27; -fx-background-color: #C6F6DE;" />
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonClicked" prefHeight="27.0" text="Refresh List">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="viewReportButton" mnemonicParsing="false" onAction="#viewReportButtonClicked" prefWidth="150.0" text="View Reports">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="440.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="tableTableView" prefHeight="600.0">
+        <columns>
+          <TableColumn fx:id="serialNumberTableColumn" prefWidth="200.0" text="Serial Number" />
+          <TableColumn fx:id="bookNameTableColumn" prefWidth="200.0" text="Book Name" />
+            <TableColumn fx:id="authorTableColumn" prefWidth="200.0" text="Author" />
+            <TableColumn fx:id="placeOnShelfTableColumn" prefWidth="200.0" text="Place On Shelf" />
+            <TableColumn fx:id="editionTableColumn" prefWidth="200.0" text="Edition" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label fx:id="totalBooksLabel" text="Total Books: 17 " />
+            <Button fx:id="removeSelectedButton" mnemonicParsing="false" onAction="#removeSelectedButtonClicked" prefWidth="150.0" text="Remove Selected">
+               <HBox.margin>
+                  <Insets left="160.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="editSelectedButton" mnemonicParsing="false" onAction="#editSelectedButtonClicked" prefWidth="150.0" text="Edit Selected">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="addANewBookButton" mnemonicParsing="false" onAction="#addANewBookButtonClicked" prefWidth="150.0" text="Add A New Book">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" />
+   </padding>
+</VBox>

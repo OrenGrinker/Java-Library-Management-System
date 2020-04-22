@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IP_FXML_IPSetup_Controller">
+   <children>
+      <Label text="Welcome to OBL">
+         <font>
+            <Font name="Calibri Bold" size="42.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER">
+         <children>
+            <TextField fx:id="ipTextField" onAction="#hostEnterPressed" promptText="LocalHost / Host IP">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </TextField>
+            <Label text=":">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="portTextField" onAction="#portEnterPressed" promptText="Port">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../z_images/Loading2.gif" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Button fx:id="testConnectionButton" mnemonicParsing="false" onAction="#testConnectionClicked" text="Test Connection">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="applyAndCloseButton" disable="true" mnemonicParsing="false" onAction="#applyAndCloseClicked" text="Apply and Close">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</VBox>

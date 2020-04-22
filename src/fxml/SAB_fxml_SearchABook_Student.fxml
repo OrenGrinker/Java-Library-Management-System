@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SAB_FXML_SearchABook_Student_Controller">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="MyProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <MenuItem fx:id="SignOutMenuItem" mnemonicParsing="false" onAction="#signOutMenuItemClicked" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="MyBooksMenuItem" mnemonicParsing="false" onAction="#myBooksMenuItemClicked" text="My Books" />
+                  <MenuItem fx:id="SearchABookMenuItem" mnemonicParsing="false" onAction="#searchABookMenuItemClicked" text="Search a book" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label fx:id="helloLabel" prefWidth="159.0" text="Hello">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="255.0" prefWidth="482.0" spacing="20.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="409.0" prefWidth="212.0" spacing="10.0">
+               <children>
+                  <Label fx:id="searchForABookLabel" text="Search for a book">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <RadioButton fx:id="bookNameRadioButton" lineSpacing="5.0" mnemonicParsing="false" onAction="#bookNameRadioButtonClicked" prefHeight="17.0" prefWidth="89.0" selected="true" text="Book name:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <TextField fx:id="bookNameTextField" onAction="#bookNameTextFieldEnterPressed" onMouseClicked="#bookNameMouseClicked">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="authorNameRadioButton" mnemonicParsing="false" onAction="#authorNameRadioButtonClicked" text="Author name:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <TextField fx:id="authorNameTextField" onAction="#authorNameTextFieldEnterPressed" onMouseClicked="#authorNameMouseClicked">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="bookTopicRadioButton" mnemonicParsing="false" onAction="#bookTopicRadioButtonClicked" text="Book topic:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <TextField fx:id="bookTopicTextField" onAction="#bookTopicTextFieldEnterPressed" onMouseClicked="#bookTopicMouseClicked">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="freeTextRadioButton" mnemonicParsing="false" onAction="#freeTextRadioButtonClicked" text="Free text:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <TextArea fx:id="freeTextArea" onMouseClicked="#freeTextMouseClicked" prefHeight="68.0" prefWidth="212.0" />
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="27.0" prefWidth="100.0" text="Search">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="27.0" prefWidth="100.0" text="Clear">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="132.0" fitWidth="235.0" focusTraversable="true" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../z_images/BookDetailImage.jpg" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" spacing="40.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </HBox>
+                  <ImageView fx:id="imageVIew" fitHeight="150.0" fitWidth="200.0" opacity="0.5" pickOnBounds="true">
+                     <image>
+                        <Image url="@book-book-pages-bookcase-415071.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

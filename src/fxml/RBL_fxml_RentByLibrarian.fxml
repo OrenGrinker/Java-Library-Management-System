@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RBL_FXML_RentByLibrarian_Controller">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="myProfileMenuItem" mnemonicParsing="false" onAction="#myProfileMenuItemClicked" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem fx:id="createNewProfileMenuItem" mnemonicParsing="false" onAction="#createNewProfileMenuItemClicked" text="Create New Profile" />
+                        <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" onAction="#viewProfileMenuItemClicked" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="signOutMenuItem" mnemonicParsing="false" onAction="#signOutMenuItemClicked" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem fx:id="searchMenuItem" mnemonicParsing="false" onAction="#searchMenuItemClicked" text="Search" />
+                  <MenuItem fx:id="returnABookMenuItem" mnemonicParsing="false" onAction="#returnABookMenuItemCLicked" text="Return A Book" />
+                  <MenuItem fx:id="stockManagmentMenuItem" mnemonicParsing="false" onAction="#stockManagmentMenuItemClicked" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemClicked" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" prefHeight="364.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <VBox prefHeight="421.0" prefWidth="229.0" spacing="10.0">
+               <children>
+                  <Label text="Welcome Rachel Bittun">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Rent a book">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Student ID">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="studentIDTextField" minWidth="200.0">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></TextField>
+                  <Label text="Serial number">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <TextField fx:id="SerialNumberTextField" maxWidth="200.0" onAction="#SerialNumberTextFieldEnterPressed" prefHeight="27.0" prefWidth="151.0">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="loadButton" mnemonicParsing="false" onAction="#loadButtonClicked" text="Load" />
+                     </children>
+                  </HBox>
+                  <Label text="Book name">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="BookNameTextField" editable="false" maxWidth="200.0" prefWidth="200.0">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <HBox spacing="40.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </HBox>
+                  <Label text="Date of rent">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateOfRentDatePicker" minWidth="200.0" />
+                  <Label text="Return Date">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="returnDateDatePicker" minWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="189.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../z_images/LogInImage.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nOACLabel" text="Number Of Available Copies: ##">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="placeOnShelf" text="Place On Shelf: ####">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="27.0" prefWidth="200.0" text="Back">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="rentButton" mnemonicParsing="false" onAction="#rentButtonClicked" prefHeight="27.0" prefWidth="200.0" text="Rent">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

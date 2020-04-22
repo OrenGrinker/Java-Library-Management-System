@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="550.0" prefWidth="440.0" spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: white;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="My Profile" />
+                  <Menu mnemonicParsing="false" text="Student Profile">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Create New Profile" />
+                        <MenuItem mnemonicParsing="false" text="View Profile" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Sign Out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Book Management">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Search" />
+                  <MenuItem mnemonicParsing="false" text="Return A Book" />
+                  <MenuItem mnemonicParsing="false" text="Stock Managment" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+         <VBox.margin>
+            <Insets left="-15.0" />
+         </VBox.margin>
+      </MenuBar>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Updating">
+         <font>
+            <Font name="Calibri Bold" size="48.0" />
+         </font>
+      </Text>
+      <HBox spacing="10.0">
+         <children>
+            <VBox spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fill fields" wrappingWidth="198.13665962219238">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="SerialNumberTextField" promptText="Serial Number" />
+                  <TextField fx:id="NameTextField" promptText="*Name" />
+                  <TextField fx:id="AuthoTextField" promptText="*Author" />
+                  <TextField fx:id="SubjectTextField" promptText="*Subject" />
+                  <TextField fx:id="ShelfTextField" promptText="*Shelf" />
+                  <TextField fx:id="CopiesNumberTextField" promptText="*Copies Number" />
+                  <TextField fx:id="EditionTextField" promptText="*Edition" />
+                  <DatePicker fx:id="PrinitngDateDatePicker" prefWidth="200.0" promptText="*Prinitng Date" />
+                  <DatePicker fx:id="AquisitionDateTextField" prefWidth="200.0" promptText="*Purchased Date " />
+                  <TextField fx:id="TableOfContents" promptText="*table of contents" />
+                  <TextField fx:id="DescriptionTextFiel" promptText="Description" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Subjects" textAlignment="CENTER" wrappingWidth="198.13665962219238">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Text>
+                        <MenuButton fx:id="chooseMenuButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Choose">
+                           <items>
+                              <MenuItem fx:id="softwareMenuItem" mnemonicParsing="false" onAction="#softwareMenuItemClicked" text="Software" />
+                              <MenuItem fx:id="InforamationSystemsMenuItem" mnemonicParsing="false" onAction="#InforamationSystemsMenuItemClicked" text="Inforamation Systems" />
+                              <MenuItem fx:id="industryNManagmenMenuItem" mnemonicParsing="false" onAction="#industryNmanagmentMenuItemClicked" text="Industry &amp; managment" />
+                              <MenuItem fx:id="eclectricityNEkctronicsMenuItem" mnemonicParsing="false" onAction="#eclectricityNEkctronicsMenuItemClicked" text="Electronics" />
+                              <MenuItem fx:id="AppliedMathematicsMenuItem" mnemonicParsing="false" onAction="#AppliedMathematicsMenuItemClicked" text="Applied Mathematics" />
+                              <MenuItem fx:id="BiotechnologyMenuItem" mnemonicParsing="false" onAction="#BiotechnologyMenuItemClicked" text="Biotechnology" />
+                              <MenuItem fx:id="OpticsMenuItem" mnemonicParsing="false" onAction="#OpticsMenuItemClicked" text="Optics" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../z_images/BookCartoon.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonClicked" prefWidth="200.0" text="cancel" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="200.0" text="save" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" />
+   </padding>
+</VBox>
